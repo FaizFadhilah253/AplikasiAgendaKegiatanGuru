@@ -1,0 +1,41 @@
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\App_AgendaKegiatanGuru.exe.config
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\App_AgendaKegiatanGuru.exe
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\App_AgendaKegiatanGuru.pdb
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\Guna.UI2.dll
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\MySql.Data.dll
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\Google.Protobuf.dll
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\MySql.Data.xml
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.csprojAssemblyReference.cache
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.Form1.resources
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.Form2.resources
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.Properties.Resources.resources
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.csproj.GenerateResource.cache
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.csproj.CopyComplete
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.exe
+C:\Users\ASUS\source\repos\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.pdb
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\App_AgendaKegiatanGuru.exe.config
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\App_AgendaKegiatanGuru.exe
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\App_AgendaKegiatanGuru.pdb
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\Guna.UI2.dll
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\MySql.Data.dll
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\Google.Protobuf.dll
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\MySql.Data.xml
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.csprojAssemblyReference.cache
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FLogin.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FRole.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FUser.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.Properties.Resources.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.csproj.GenerateResource.cache
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.csproj.CoreCompileInputs.cache
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.csproj.CopyComplete
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.exe
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.pdb
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.Fguru.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.Fkategori.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.Flokasi.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FAgendaKegiatan.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.DashboardAdmin.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FmenuPetugas.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FmenuAdmin.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FmenuPengguna.resources

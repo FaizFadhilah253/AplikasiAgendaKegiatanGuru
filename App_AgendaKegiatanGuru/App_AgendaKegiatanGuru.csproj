@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C48825EC-F07A-4C4D-A883-F3B9C45049F7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>App_AgendaKegiatanGuru</RootNamespace>
+    <AssemblyName>App_AgendaKegiatanGuru</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.8, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.8\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DashboardAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardAdmin.Designer.cs">
+      <DependentUpon>DashboardAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB.cs" />
+    <Compile Include="FAgendaKegiatan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAgendaKegiatan.Designer.cs">
+      <DependentUpon>FAgendaKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmenuPetugas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmenuPetugas.Designer.cs">
+      <DependentUpon>FmenuPetugas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fguru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fguru.Designer.cs">
+      <DependentUpon>Fguru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fkategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fkategori.Designer.cs">
+      <DependentUpon>Fkategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmenuAdmin.Designer.cs">
+      <DependentUpon>FmenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flokasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flokasi.Designer.cs">
+      <DependentUpon>Flokasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmenuPengguna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmenuPengguna.Designer.cs">
+      <DependentUpon>FmenuPengguna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FUser.Designer.cs">
+      <DependentUpon>FUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRole.Designer.cs">
+      <DependentUpon>FRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KF.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DashboardAdmin.resx">
+      <DependentUpon>DashboardAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAgendaKegiatan.resx">
+      <DependentUpon>FAgendaKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmenuPetugas.resx">
+      <DependentUpon>FmenuPetugas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fguru.resx">
+      <DependentUpon>Fguru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fkategori.resx">
+      <DependentUpon>Fkategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmenuAdmin.resx">
+      <DependentUpon>FmenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flokasi.resx">
+      <DependentUpon>Flokasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmenuPengguna.resx">
+      <DependentUpon>FmenuPengguna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRole.resx">
+      <DependentUpon>FRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FUser.resx">
+      <DependentUpon>FUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
