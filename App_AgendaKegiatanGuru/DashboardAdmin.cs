@@ -17,9 +17,38 @@ namespace App_AgendaKegiatanGuru
             InitializeComponent();
         }
 
+        public void tampildata()
+        {
+            dataGridView1.Rows.Clear();
+            DB.crud("select * from agenda");
+            foreach (DataRow baris in DB.ds.Tables[0].Rows)
+            {
+                string ida = "" + baris["id_agenda"];
+                string tgl = "" + baris["tanggal"];
+                string wakmul = "" + baris["waktu_mulai"];
+                string waksel = "" + baris["waktu_selesai"];
+                string kgt = "" + baris["kegiatan"];
+                string gr = "" + baris["guru"];
+                string kate = "" + baris["kategori"];
+                string lok = "" + baris["lokasi"];
+                dataGridView1.Rows.Add(ida, tgl, wakmul, waksel, kgt, gr, kate, lok);
+
+            }
+        }
+
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            tampildata();
         }
     }
 }

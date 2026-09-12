@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Sep 2026 pada 10.36
+-- Waktu pembuatan: 11 Sep 2026 pada 11.04
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.0.30
 
@@ -43,8 +43,9 @@ CREATE TABLE `agenda` (
 --
 
 INSERT INTO `agenda` (`id_agenda`, `tanggal`, `waktu_mulai`, `waktu_selesai`, `kegiatan`, `guru`, `kategori`, `lokasi`) VALUES
-(1, '2026-08-28', '10:00:00', '11:00:00', 'rapat', 'Seluruh guru', 'Rapat', 'HB'),
-(2, '2026-09-04', '20:00:00', '00:00:00', 'Tumpengan', 'Seluruh Guru', 'Tumpengan', 'Gedung Serba Guna');
+(1, '2026-08-28', '10:00:00', '11:00:00', 'upacara', 'pak koyok', 'sekolah', 'HB'),
+(2, '2026-09-04', '20:00:00', '00:00:00', 'ekstrakulikuler', 'bu budi', 'ekstrakulikuler', 'sekolah'),
+(3, '2026-09-11', '09:00:00', '12:00:00', 'Rapat guru', 'pa santoso', 'Rapat', 'Ruang Guru');
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,8 @@ CREATE TABLE `kategori` (
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 (1, 'rapat '),
-(2, 'persiapan lomba 17 agustus');
+(2, 'persiapan lomba 17 agus'),
+(4, 'AGUSSSSSSSSSSSS');
 
 -- --------------------------------------------------------
 
@@ -201,7 +203,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `guru`
@@ -213,7 +215,7 @@ ALTER TABLE `guru`
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `lokasi`

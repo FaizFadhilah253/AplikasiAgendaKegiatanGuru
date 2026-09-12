@@ -40,15 +40,15 @@ namespace App_AgendaKegiatanGuru
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TXTlokasi = new Guna.UI2.WinForms.Guna2TextBox();
             this.TXTkategori = new Guna.UI2.WinForms.Guna2TextBox();
             this.TXTkegiatan = new Guna.UI2.WinForms.Guna2TextBox();
             this.TXTwaksel = new Guna.UI2.WinForms.Guna2TextBox();
             this.TXTwakmul = new Guna.UI2.WinForms.Guna2TextBox();
+            this.DTPtanggal = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DTPtanggal = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +60,7 @@ namespace App_AgendaKegiatanGuru
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -85,11 +86,12 @@ namespace App_AgendaKegiatanGuru
             this.guna2ShadowPanel3.Controls.Add(this.TXTwakmul);
             this.guna2ShadowPanel3.Controls.Add(this.DTPtanggal);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel3.Location = new System.Drawing.Point(126, 113);
+            this.guna2ShadowPanel3.Location = new System.Drawing.Point(38, 67);
             this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel3.Size = new System.Drawing.Size(1401, 346);
+            this.guna2ShadowPanel3.Size = new System.Drawing.Size(1458, 346);
             this.guna2ShadowPanel3.TabIndex = 10;
+            this.guna2ShadowPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel3_Paint);
             // 
             // guna2Button4
             // 
@@ -127,6 +129,7 @@ namespace App_AgendaKegiatanGuru
             this.TXTguru.SelectedText = "";
             this.TXTguru.Size = new System.Drawing.Size(260, 51);
             this.TXTguru.TabIndex = 14;
+            this.TXTguru.TextChanged += new System.EventHandler(this.TXTguru_TextChanged);
             // 
             // guna2Button3
             // 
@@ -170,6 +173,7 @@ namespace App_AgendaKegiatanGuru
             this.label8.Size = new System.Drawing.Size(55, 20);
             this.label8.TabIndex = 13;
             this.label8.Text = "Lokasi";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label6
             // 
@@ -179,6 +183,7 @@ namespace App_AgendaKegiatanGuru
             this.label6.Size = new System.Drawing.Size(45, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Guru";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -188,6 +193,7 @@ namespace App_AgendaKegiatanGuru
             this.label5.Size = new System.Drawing.Size(68, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Kategori";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -197,6 +203,7 @@ namespace App_AgendaKegiatanGuru
             this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "Kegiatan";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -206,6 +213,7 @@ namespace App_AgendaKegiatanGuru
             this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "Waktu Selesai";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -215,6 +223,17 @@ namespace App_AgendaKegiatanGuru
             this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Waktu Mulai";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(46, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 20);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Tanggal";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // TXTlokasi
             // 
@@ -235,6 +254,7 @@ namespace App_AgendaKegiatanGuru
             this.TXTlokasi.SelectedText = "";
             this.TXTlokasi.Size = new System.Drawing.Size(260, 51);
             this.TXTlokasi.TabIndex = 6;
+            this.TXTlokasi.TextChanged += new System.EventHandler(this.TXTlokasi_TextChanged);
             // 
             // TXTkategori
             // 
@@ -255,6 +275,7 @@ namespace App_AgendaKegiatanGuru
             this.TXTkategori.SelectedText = "";
             this.TXTkategori.Size = new System.Drawing.Size(260, 51);
             this.TXTkategori.TabIndex = 5;
+            this.TXTkategori.TextChanged += new System.EventHandler(this.TXTkategori_TextChanged);
             // 
             // TXTkegiatan
             // 
@@ -275,6 +296,7 @@ namespace App_AgendaKegiatanGuru
             this.TXTkegiatan.SelectedText = "";
             this.TXTkegiatan.Size = new System.Drawing.Size(582, 51);
             this.TXTkegiatan.TabIndex = 4;
+            this.TXTkegiatan.TextChanged += new System.EventHandler(this.TXTkegiatan_TextChanged);
             // 
             // TXTwaksel
             // 
@@ -295,6 +317,7 @@ namespace App_AgendaKegiatanGuru
             this.TXTwaksel.SelectedText = "";
             this.TXTwaksel.Size = new System.Drawing.Size(260, 51);
             this.TXTwaksel.TabIndex = 2;
+            this.TXTwaksel.TextChanged += new System.EventHandler(this.TXTwaksel_TextChanged);
             // 
             // TXTwakmul
             // 
@@ -315,34 +338,7 @@ namespace App_AgendaKegiatanGuru
             this.TXTwakmul.SelectedText = "";
             this.TXTwakmul.Size = new System.Drawing.Size(260, 51);
             this.TXTwakmul.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(130, 40);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(170, 25);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Selamat datang!";
-            // 
-            // ID
-            // 
-            this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(122, 469);
-            this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(51, 20);
-            this.ID.TabIndex = 50;
-            this.ID.Text = "label9";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Tanggal";
+            this.TXTwakmul.TextChanged += new System.EventHandler(this.TXTwakmul_TextChanged);
             // 
             // DTPtanggal
             // 
@@ -358,9 +354,32 @@ namespace App_AgendaKegiatanGuru
             this.DTPtanggal.Size = new System.Drawing.Size(251, 51);
             this.DTPtanggal.TabIndex = 0;
             this.DTPtanggal.Value = new System.DateTime(2026, 8, 28, 13, 27, 52, 724);
+            this.DTPtanggal.ValueChanged += new System.EventHandler(this.DTPtanggal_ValueChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(42, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(170, 25);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Selamat datang!";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // ID
+            // 
+            this.ID.AutoSize = true;
+            this.ID.Location = new System.Drawing.Point(406, 440);
+            this.ID.Name = "ID";
+            this.ID.Size = new System.Drawing.Size(26, 20);
+            this.ID.TabIndex = 50;
+            this.ID.Text = "ID";
+            this.ID.Click += new System.EventHandler(this.ID_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -373,13 +392,14 @@ namespace App_AgendaKegiatanGuru
             this.Column8,
             this.Column9,
             this.Column10});
-            this.dataGridView1.Location = new System.Drawing.Point(126, 492);
+            this.dataGridView1.Location = new System.Drawing.Point(38, 477);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1339, 367);
+            this.dataGridView1.Size = new System.Drawing.Size(1458, 305);
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // Column1
             // 
@@ -451,13 +471,35 @@ namespace App_AgendaKegiatanGuru
             this.Column10.Name = "Column10";
             this.Column10.Width = 150;
             // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BorderRadius = 10;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(38, 421);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PlaceholderText = "Search...";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(358, 51);
+            this.guna2TextBox1.TabIndex = 39;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            // 
             // FAgendaKegiatan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.ClientSize = new System.Drawing.Size(1508, 782);
+            this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ID);
             this.Controls.Add(this.label7);
@@ -504,5 +546,6 @@ namespace App_AgendaKegiatanGuru
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewImageColumn Column9;
         private System.Windows.Forms.DataGridViewImageColumn Column10;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
 }

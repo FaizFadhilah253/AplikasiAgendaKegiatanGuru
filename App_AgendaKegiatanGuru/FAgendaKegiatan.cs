@@ -85,7 +85,7 @@ namespace App_AgendaKegiatanGuru
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -136,6 +136,114 @@ namespace App_AgendaKegiatanGuru
 
                 tampildata();
                 bersih();
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TXTguru_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTlokasi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTkategori_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTkegiatan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTwaksel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTwakmul_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DTPtanggal_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ShadowPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            DB.crud($"select * from agenda where guru like '%{guna2TextBox1.Text}%'");
+            foreach (DataRow baris in DB.ds.Tables[0].Rows)
+            {
+                string ida = "" + baris["id_agenda"];
+                string tgl = "" + baris["tanggal"];
+                string wakmul = "" + baris["waktu_mulai"];
+                string waksel = "" + baris["waktu_selesai"];
+                string kgt = "" + baris["kegiatan"];
+                string gr = "" + baris["guru"];
+                string kate = "" + baris["kategori"];
+                string lok = "" + baris["lokasi"];
+                dataGridView1.Rows.Add(ida, tgl, wakmul, waksel, kgt, gr, kate, lok);
             }
         }
     }

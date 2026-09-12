@@ -39,3 +39,4 @@ E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_Ag
 E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FmenuPetugas.resources
 E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FmenuAdmin.resources
 E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FmenuPengguna.resources
+E:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.saveadmin.resources
