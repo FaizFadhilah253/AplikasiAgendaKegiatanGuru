@@ -44,6 +44,8 @@ namespace App_AgendaKegiatanGuru
             this.label5 = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,10 +55,6 @@ namespace App_AgendaKegiatanGuru
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -77,6 +75,7 @@ namespace App_AgendaKegiatanGuru
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1437, 157);
             this.guna2ShadowPanel1.TabIndex = 0;
+            this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
             // label2
             // 
@@ -86,6 +85,7 @@ namespace App_AgendaKegiatanGuru
             this.label2.Size = new System.Drawing.Size(219, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Kelola Agenda Kegiatan Guru";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -96,6 +96,7 @@ namespace App_AgendaKegiatanGuru
             this.label1.Size = new System.Drawing.Size(242, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Selamat Datang!";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // guna2ShadowPanel2
             // 
@@ -110,6 +111,7 @@ namespace App_AgendaKegiatanGuru
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel2.Size = new System.Drawing.Size(411, 161);
             this.guna2ShadowPanel2.TabIndex = 1;
+            this.guna2ShadowPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel2_Paint);
             // 
             // label7
             // 
@@ -120,6 +122,7 @@ namespace App_AgendaKegiatanGuru
             this.label7.Size = new System.Drawing.Size(169, 29);
             this.label7.TabIndex = 2;
             this.label7.Text = "Total Agenda";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label3
             // 
@@ -129,6 +132,7 @@ namespace App_AgendaKegiatanGuru
             this.label3.Size = new System.Drawing.Size(198, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Semua Kegiatan Terjadwal";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -154,6 +158,7 @@ namespace App_AgendaKegiatanGuru
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // guna2ShadowPanel3
             // 
@@ -168,6 +173,7 @@ namespace App_AgendaKegiatanGuru
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel3.Size = new System.Drawing.Size(421, 161);
             this.guna2ShadowPanel3.TabIndex = 2;
+            this.guna2ShadowPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel3_Paint);
             // 
             // label8
             // 
@@ -178,6 +184,7 @@ namespace App_AgendaKegiatanGuru
             this.label8.Size = new System.Drawing.Size(192, 29);
             this.label8.TabIndex = 3;
             this.label8.Text = "Agenda Hari Ini";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label6
             // 
@@ -187,6 +194,7 @@ namespace App_AgendaKegiatanGuru
             this.label6.Size = new System.Drawing.Size(220, 20);
             this.label6.TabIndex = 3;
             this.label6.Text = "Kegiatan Berlangsung Hari Ini";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -198,6 +206,7 @@ namespace App_AgendaKegiatanGuru
             this.label5.Size = new System.Drawing.Size(32, 32);
             this.label5.TabIndex = 4;
             this.label5.Text = "?";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // guna2PictureBox2
             // 
@@ -209,6 +218,7 @@ namespace App_AgendaKegiatanGuru
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox2.TabIndex = 1;
             this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.Click += new System.EventHandler(this.guna2PictureBox2_Click);
             // 
             // guna2CustomGradientPanel1
             // 
@@ -219,6 +229,36 @@ namespace App_AgendaKegiatanGuru
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1437, 393);
             this.guna2CustomGradientPanel1.TabIndex = 53;
+            this.guna2CustomGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel1_Paint_1);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(13, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(212, 29);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Agenda Kegiatan";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.BorderRadius = 10;
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.FillColor = System.Drawing.Color.Silver;
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.Location = new System.Drawing.Point(1235, 21);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button4.TabIndex = 54;
+            this.guna2Button4.Text = "Tampil Data";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // dataGridView1
             // 
@@ -232,15 +272,14 @@ namespace App_AgendaKegiatanGuru
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
+            this.Column8});
             this.dataGridView1.Location = new System.Drawing.Point(18, 72);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1397, 305);
             this.dataGridView1.TabIndex = 53;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -298,48 +337,6 @@ namespace App_AgendaKegiatanGuru
             this.Column8.Name = "Column8";
             this.Column8.Width = 150;
             // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "";
-            this.Column9.MinimumWidth = 8;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 150;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "";
-            this.Column10.MinimumWidth = 8;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 150;
-            // 
-            // guna2Button4
-            // 
-            this.guna2Button4.BorderRadius = 10;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.Silver;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(1235, 21);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button4.TabIndex = 54;
-            this.guna2Button4.Text = "Tampil Data";
-            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(212, 29);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Agenda Kegiatan";
-            // 
             // DashboardAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -384,6 +381,8 @@ namespace App_AgendaKegiatanGuru
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -392,9 +391,5 @@ namespace App_AgendaKegiatanGuru
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewImageColumn Column9;
-        private System.Windows.Forms.DataGridViewImageColumn Column10;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private System.Windows.Forms.Label label9;
     }
 }

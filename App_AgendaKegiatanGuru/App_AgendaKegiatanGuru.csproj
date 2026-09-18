@@ -66,6 +66,12 @@
     <Compile Include="FAgendaKegiatan.Designer.cs">
       <DependentUpon>FAgendaKegiatan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FLaporan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLaporan.Designer.cs">
+      <DependentUpon>FLaporan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FmenuPetugas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FAgendaKegiatan.resx">
       <DependentUpon>FAgendaKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FLaporan.resx">
+      <DependentUpon>FLaporan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FmenuPetugas.resx">
       <DependentUpon>FmenuPetugas.cs</DependentUpon>
