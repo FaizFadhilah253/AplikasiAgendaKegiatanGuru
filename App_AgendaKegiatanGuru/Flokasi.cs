@@ -25,8 +25,8 @@ namespace App_AgendaKegiatanGuru
             {
                 string id = "" + baris["id_lokasi"];
                 string namlok = "" + baris["nama_lokasi"];
-                string gdg = "" + baris["gedung"];
-                dataGridView1.Rows.Add(id, namlok, gdg);
+                string kt = "" + baris["keterangan"];
+                dataGridView1.Rows.Add(id, namlok, kt);
 
             }
         }
@@ -35,16 +35,16 @@ namespace App_AgendaKegiatanGuru
         {
             label4.Text = "";
             TXTlok.Text = "";
-            TXTgedung.Text = "";
+            TXTketerangan.Text = "";
         }
         private void BTNsimpan_Click(object sender, EventArgs e)
         {
-            if (TXTlok.Text != "" || TXTgedung.Text != "")
+            if (TXTlok.Text != "" || TXTketerangan.Text != "")
             {
                 string namlok = TXTlok.Text;
-                string gdg = TXTgedung.Text;
+                string kt = TXTketerangan.Text;
 
-                DB.crud($"INSERT INTO lokasi values(null, '{namlok}', '{gdg}')");
+                DB.crud($"INSERT INTO lokasi values(null, '{namlok}', '{kt}')");
                 tampildata();
 
             }
@@ -56,7 +56,7 @@ namespace App_AgendaKegiatanGuru
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            DB.crud($"UPDATE lokasi set nama_lokasi = '{TXTlok.Text}', gedung = '{TXTgedung.Text}' where id_lokasi = '{label4.Text}' ");
+            DB.crud($"UPDATE lokasi set nama_lokasi = '{TXTlok.Text}', keterangan = '{TXTketerangan.Text}' where id_lokasi = '{label4.Text}' ");
 
             tampildata();
             bersih();
@@ -80,11 +80,11 @@ namespace App_AgendaKegiatanGuru
                 {
                     string id = "" + brs["id_lokasi"];
                     string namlok = "" + brs["nama_lokasi"];
-                    string gdg = "" + brs["gedung"];
+                    string kt = "" + brs["keterangan"];
 
                     label4.Text = id;
                     TXTlok.Text = namlok;
-                    TXTgedung.Text = gdg;
+                    TXTketerangan.Text = kt;
                 }
 
             }

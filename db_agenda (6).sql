@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Sep 2026 pada 11.04
+-- Waktu pembuatan: 25 Sep 2026 pada 09.24
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.0.30
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `agenda` (
   `id_agenda` int(11) NOT NULL,
-  `tanggal` date NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `waktu_mulai` time NOT NULL,
   `waktu_selesai` time NOT NULL,
   `kegiatan` varchar(150) NOT NULL,
@@ -43,9 +43,13 @@ CREATE TABLE `agenda` (
 --
 
 INSERT INTO `agenda` (`id_agenda`, `tanggal`, `waktu_mulai`, `waktu_selesai`, `kegiatan`, `guru`, `kategori`, `lokasi`) VALUES
-(1, '2026-08-28', '10:00:00', '11:00:00', 'upacara', 'pak koyok', 'sekolah', 'HB'),
-(2, '2026-09-04', '20:00:00', '00:00:00', 'ekstrakulikuler', 'bu budi', 'ekstrakulikuler', 'sekolah'),
-(3, '2026-09-11', '09:00:00', '12:00:00', 'Rapat guru', 'pa santoso', 'Rapat', 'Ruang Guru');
+(1, '2026-08-27 17:00:00', '10:00:00', '11:00:00', 'upacara', 'pa koyok', 'sekolah', 'HB'),
+(2, '2026-09-03 17:00:00', '20:00:00', '00:00:00', 'ekstrakulikuler', 'bu budi', 'ekstrakulikuler', 'sekolah'),
+(3, '2026-09-10 17:00:00', '09:00:00', '12:00:00', 'Rapat guru', 'pa santoso', 'Rapat', 'Ruang Guru'),
+(4, '2026-09-17 17:00:00', '12:00:00', '14:00:00', 'Rapat guru', 'pa kusna', 'Rapat', 'Aula'),
+(5, '2026-09-17 17:00:00', '12:00:00', '14:00:00', 'Bimbingan Siswa', 'pa kusna', 'Bimbingan', 'Kelas'),
+(6, '2026-09-17 17:00:00', '12:00:00', '13:00:00', 'Rapat guru', 'pa koyok', 'Rapat', 'Aula'),
+(7, '2026-09-24 23:40:35', '10:00:00', '12:00:00', 'mengajar', 'pa koyok', 'mengajar', 'lab 2 rpl');
 
 -- --------------------------------------------------------
 
@@ -66,10 +70,10 @@ CREATE TABLE `guru` (
 --
 
 INSERT INTO `guru` (`id_guru`, `nip`, `nama_guru`, `jenis_kelamin`, `no_telepon`) VALUES
-(1, '45678765456765', 'dede', 'Laki-laki', '0987679876'),
-(2, '3291739739173939', 'kude', 'Perempuan', '123456789'),
-(4, '6543212345', 'mail', 'Laki-laki', '089743575'),
-(6, '23456', 'abeh', 'Perempuan', '09876545678');
+(1, '45678765456765', 'pa kusna', 'Laki-laki', '0987679876'),
+(2, '3291739739173939', 'pa santoso', 'Laki-laki', '123456789'),
+(4, '6543212345', 'bu budi', 'Laki-laki', '089743575'),
+(7, '242343443', 'pa koyok', 'Laki-laki', '098765456789');
 
 -- --------------------------------------------------------
 
@@ -88,8 +92,9 @@ CREATE TABLE `kategori` (
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 (1, 'rapat '),
-(2, 'persiapan lomba 17 agus'),
-(4, 'AGUSSSSSSSSSSSS');
+(2, 'ekstrakulikuler'),
+(5, 'bimbingan'),
+(6, 'mengajar');
 
 -- --------------------------------------------------------
 
@@ -100,15 +105,17 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 CREATE TABLE `lokasi` (
   `id_lokasi` int(11) NOT NULL,
   `nama_lokasi` varchar(50) NOT NULL,
-  `gedung` varchar(50) NOT NULL
+  `keterangan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `lokasi`
 --
 
-INSERT INTO `lokasi` (`id_lokasi`, `nama_lokasi`, `gedung`) VALUES
-(1, 'cisepan', 'gedung serba serba');
+INSERT INTO `lokasi` (`id_lokasi`, `nama_lokasi`, `keterangan`) VALUES
+(1, 'Ruang 1', 'Mengajar'),
+(3, 'Aula', 'Rapat'),
+(5, 'Ruang 3', 'Mengajar');
 
 -- --------------------------------------------------------
 
@@ -203,25 +210,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `lokasi`
 --
 ALTER TABLE `lokasi`
-  MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `role`

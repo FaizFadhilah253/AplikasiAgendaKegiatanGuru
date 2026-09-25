@@ -31,7 +31,7 @@ namespace App_AgendaKegiatanGuru
         {
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TXTgedung = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TXTketerangan = new Guna.UI2.WinForms.Guna2TextBox();
             this.TXTlok = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -51,9 +51,9 @@ namespace App_AgendaKegiatanGuru
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(684, 274);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 20);
+            this.label6.Size = new System.Drawing.Size(92, 20);
             this.label6.TabIndex = 65;
-            this.label6.Text = "Gedung";
+            this.label6.Text = "Keterangan";
             // 
             // label1
             // 
@@ -64,25 +64,25 @@ namespace App_AgendaKegiatanGuru
             this.label1.TabIndex = 57;
             this.label1.Text = "Nama lokasi";
             // 
-            // TXTgedung
+            // TXTketerangan
             // 
-            this.TXTgedung.BorderRadius = 10;
-            this.TXTgedung.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TXTgedung.DefaultText = "";
-            this.TXTgedung.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TXTgedung.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TXTgedung.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TXTgedung.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TXTgedung.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TXTgedung.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TXTgedung.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TXTgedung.Location = new System.Drawing.Point(678, 299);
-            this.TXTgedung.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TXTgedung.Name = "TXTgedung";
-            this.TXTgedung.PlaceholderText = "Masukkan Gedung...";
-            this.TXTgedung.SelectedText = "";
-            this.TXTgedung.Size = new System.Drawing.Size(272, 53);
-            this.TXTgedung.TabIndex = 55;
+            this.TXTketerangan.BorderRadius = 10;
+            this.TXTketerangan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TXTketerangan.DefaultText = "";
+            this.TXTketerangan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TXTketerangan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TXTketerangan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TXTketerangan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TXTketerangan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TXTketerangan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TXTketerangan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TXTketerangan.Location = new System.Drawing.Point(678, 299);
+            this.TXTketerangan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TXTketerangan.Name = "TXTketerangan";
+            this.TXTketerangan.PlaceholderText = "Masukkan Keterangan...";
+            this.TXTketerangan.SelectedText = "";
+            this.TXTketerangan.Size = new System.Drawing.Size(272, 53);
+            this.TXTketerangan.TabIndex = 55;
             // 
             // TXTlok
             // 
@@ -197,7 +197,7 @@ namespace App_AgendaKegiatanGuru
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Gedung";
+            this.Column3.HeaderText = "Keterangan";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
             this.Column3.Width = 150;
@@ -224,7 +224,7 @@ namespace App_AgendaKegiatanGuru
             this.ClientSize = new System.Drawing.Size(1556, 913);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.TXTgedung);
+            this.Controls.Add(this.TXTketerangan);
             this.Controls.Add(this.TXTlok);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.guna2Button4);
@@ -243,7 +243,7 @@ namespace App_AgendaKegiatanGuru
 
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox TXTgedung;
+        private Guna.UI2.WinForms.Guna2TextBox TXTketerangan;
         private Guna.UI2.WinForms.Guna2TextBox TXTlok;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;

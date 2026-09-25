@@ -39,28 +39,26 @@ namespace App_AgendaKegiatanGuru
         public void bersih()
         {
             ID.Text = "";
-            DTPtanggal.Text = "";
             TXTwakmul.Text = "";
             TXTwaksel.Text = "";
             TXTkegiatan.Text = "";
-            TXTguru.Text = "";
+            CMBguru.Text = "";
             TXTkategori.Text = "";
             TXTlokasi.Text = "";
         }
 
         private void BTNsimpan_Click(object sender, EventArgs e)
         {
-            if (DTPtanggal.Text != "" || TXTwakmul.Text != "" || TXTwaksel.Text != "" || TXTkegiatan.Text != "" || TXTguru.Text != "" || TXTkategori.Text != "" || TXTlokasi.Text != "")
+            if (TXTwakmul.Text != "" || TXTwaksel.Text != "" || TXTkegiatan.Text != "" || CMBguru.Text != "" || TXTkategori.Text != "" || TXTlokasi.Text != "")
             {
-                string tgl = DTPtanggal.Value.ToString("yyyy-MM-dd");
                 string wakmul = TXTwakmul.Text;
                 string waksel = TXTwaksel.Text;
                 string kgt = TXTkegiatan.Text;
-                string gr = TXTguru.Text;
+                string gr = CMBguru.Text;
                 string kate = TXTkategori.Text;
                 string lok = TXTlokasi.Text;
 
-                DB.crud($"INSERT INTO agenda values(null, '{tgl}', '{wakmul}', '{waksel}','{kgt}', '{gr}', '{kate}', '{lok}')");
+                DB.crud($"INSERT INTO agenda values(null, null, '{wakmul}', '{waksel}','{kgt}', '{gr}', '{kate}', '{lok}')");
                 tampildata();
 
             }
@@ -72,7 +70,7 @@ namespace App_AgendaKegiatanGuru
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            DB.crud($"UPDATE agenda set tanggal = '{DTPtanggal.Value.ToString("yyyy-MM-dd")}', waktu_mulai = '{TXTwakmul.Text}', waktu_selesai = '{TXTwaksel.Text}', kegiatan = '{TXTkegiatan.Text}', guru = '{TXTguru.Text}', kategori = '{TXTkategori.Text}', lokasi = '{TXTlokasi.Text}' where id_agenda = '{ID.Text}' ");
+            DB.crud($"UPDATE agenda set tanggal = null, waktu_mulai = '{TXTwakmul.Text}', waktu_selesai = '{TXTwaksel.Text}', kegiatan = '{TXTkegiatan.Text}', guru = '{CMBguru.Text}', kategori = '{TXTkategori.Text}', lokasi = '{TXTlokasi.Text}' where id_agenda = '{ID.Text}' ");
 
             tampildata();
             bersih();
@@ -113,11 +111,10 @@ namespace App_AgendaKegiatanGuru
                     string kate = "" + brs["kategori"];
                     string lok = "" + brs["lokasi"];
                     ID.Text = ida;
-                    DTPtanggal.Text = tgl.ToString();
                     TXTwakmul.Text = wakmul;
                     TXTwaksel.Text = waksel;
                     TXTkegiatan.Text = kgt;
-                    TXTguru.Text = gr;
+                    CMBguru.Text = gr;
                     TXTkategori.Text = kate;
                     TXTlokasi.Text = lok;
                 }
@@ -244,6 +241,23 @@ namespace App_AgendaKegiatanGuru
                 string kate = "" + baris["kategori"];
                 string lok = "" + baris["lokasi"];
                 dataGridView1.Rows.Add(ida, tgl, wakmul, waksel, kgt, gr, kate, lok);
+            }
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ComboBox1_DropDown(object sender, EventArgs e)
+        {
+            DB.crud($"Select * from guru");
+            CMBguru.Items.Clear();
+            foreach (DataRow item in DB.ds.Tables[0].Rows)
+            {
+                string idg = item["id_guru"].ToString();
+                string nm = item["nama_guru"].ToString();
+                CMBguru.Items.Add(idg + " - " + nm);
             }
         }
     }
