@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Sep 2026 pada 09.24
+-- Waktu pembuatan: 03 Okt 2026 pada 04.32
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.0.30
 
@@ -29,27 +29,25 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `agenda` (
   `id_agenda` int(11) NOT NULL,
-  `tanggal` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `tanggal` date NOT NULL,
   `waktu_mulai` time NOT NULL,
   `waktu_selesai` time NOT NULL,
   `kegiatan` varchar(150) NOT NULL,
-  `guru` varchar(100) NOT NULL,
-  `kategori` varchar(100) NOT NULL,
-  `lokasi` varchar(100) NOT NULL
+  `id_guru` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_lokasi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `agenda`
 --
 
-INSERT INTO `agenda` (`id_agenda`, `tanggal`, `waktu_mulai`, `waktu_selesai`, `kegiatan`, `guru`, `kategori`, `lokasi`) VALUES
-(1, '2026-08-27 17:00:00', '10:00:00', '11:00:00', 'upacara', 'pa koyok', 'sekolah', 'HB'),
-(2, '2026-09-03 17:00:00', '20:00:00', '00:00:00', 'ekstrakulikuler', 'bu budi', 'ekstrakulikuler', 'sekolah'),
-(3, '2026-09-10 17:00:00', '09:00:00', '12:00:00', 'Rapat guru', 'pa santoso', 'Rapat', 'Ruang Guru'),
-(4, '2026-09-17 17:00:00', '12:00:00', '14:00:00', 'Rapat guru', 'pa kusna', 'Rapat', 'Aula'),
-(5, '2026-09-17 17:00:00', '12:00:00', '14:00:00', 'Bimbingan Siswa', 'pa kusna', 'Bimbingan', 'Kelas'),
-(6, '2026-09-17 17:00:00', '12:00:00', '13:00:00', 'Rapat guru', 'pa koyok', 'Rapat', 'Aula'),
-(7, '2026-09-24 23:40:35', '10:00:00', '12:00:00', 'mengajar', 'pa koyok', 'mengajar', 'lab 2 rpl');
+INSERT INTO `agenda` (`id_agenda`, `tanggal`, `waktu_mulai`, `waktu_selesai`, `kegiatan`, `id_guru`, `id_kategori`, `id_lokasi`) VALUES
+(4, '2026-10-02', '20:01:00', '10:00:00', 'mengajar', 9, 8, 7),
+(5, '2026-10-02', '20:16:40', '13:00:00', 'Rapat', 10, 7, 8),
+(6, '2026-10-02', '20:20:46', '14:00:00', 'Mengajar', 8, 9, 9),
+(8, '2026-10-02', '20:42:42', '14:00:00', 'rapat', 11, 8, 10),
+(20, '2026-10-03', '09:30:29', '13:00:00', 'konseling', 8, 9, 9);
 
 -- --------------------------------------------------------
 
@@ -70,10 +68,10 @@ CREATE TABLE `guru` (
 --
 
 INSERT INTO `guru` (`id_guru`, `nip`, `nama_guru`, `jenis_kelamin`, `no_telepon`) VALUES
-(1, '45678765456765', 'pa kusna', 'Laki-laki', '0987679876'),
-(2, '3291739739173939', 'pa santoso', 'Laki-laki', '123456789'),
-(4, '6543212345', 'bu budi', 'Laki-laki', '089743575'),
-(7, '242343443', 'pa koyok', 'Laki-laki', '098765456789');
+(8, '12345', 'pa pias', 'Laki-laki', '089764'),
+(9, '91738', 'pa paris', 'Laki-laki', '9273254'),
+(10, '242344', 'pa rudi', 'Laki-laki', '098373'),
+(11, '213245', 'pa budi', 'Laki-laki', '0144423');
 
 -- --------------------------------------------------------
 
@@ -91,10 +89,9 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
-(1, 'rapat '),
-(2, 'ekstrakulikuler'),
-(5, 'bimbingan'),
-(6, 'mengajar');
+(7, 'Mengajar'),
+(8, 'Rapat'),
+(9, 'Konseling');
 
 -- --------------------------------------------------------
 
@@ -113,9 +110,10 @@ CREATE TABLE `lokasi` (
 --
 
 INSERT INTO `lokasi` (`id_lokasi`, `nama_lokasi`, `keterangan`) VALUES
-(1, 'Ruang 1', 'Mengajar'),
-(3, 'Aula', 'Rapat'),
-(5, 'Ruang 3', 'Mengajar');
+(7, 'Ruang 1', 'Mengajar'),
+(8, 'Ruang 2', 'Mengajar'),
+(9, 'Ruang 3', 'Mengajar'),
+(10, 'Aula', 'Konseling');
 
 -- --------------------------------------------------------
 
@@ -170,7 +168,10 @@ INSERT INTO `user` (`ID`, `Nama_Lengkap`, `Username`, `Password`, `Role`) VALUES
 -- Indeks untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
-  ADD PRIMARY KEY (`id_agenda`);
+  ADD PRIMARY KEY (`id_agenda`),
+  ADD KEY `id_lokasi` (`id_lokasi`),
+  ADD KEY `id_kategori` (`id_kategori`),
+  ADD KEY `id_guru` (`id_guru`);
 
 --
 -- Indeks untuk tabel `guru`
@@ -210,25 +211,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `lokasi`
 --
 ALTER TABLE `lokasi`
-  MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `role`
@@ -241,6 +242,18 @@ ALTER TABLE `role`
 --
 ALTER TABLE `user`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `agenda`
+--
+ALTER TABLE `agenda`
+  ADD CONSTRAINT `agenda_ibfk_2` FOREIGN KEY (`id_lokasi`) REFERENCES `lokasi` (`id_lokasi`),
+  ADD CONSTRAINT `agenda_ibfk_3` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`),
+  ADD CONSTRAINT `fk_agenda_guru` FOREIGN KEY (`id_guru`) REFERENCES `guru` (`id_guru`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

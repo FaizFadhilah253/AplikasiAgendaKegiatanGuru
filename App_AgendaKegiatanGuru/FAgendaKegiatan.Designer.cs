@@ -30,6 +30,7 @@ namespace App_AgendaKegiatanGuru
         private void InitializeComponent()
         {
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.CMBguru = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.BTNsimpan = new Guna.UI2.WinForms.Guna2Button();
@@ -38,12 +39,8 @@ namespace App_AgendaKegiatanGuru
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TXTlokasi = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TXTkategori = new Guna.UI2.WinForms.Guna2TextBox();
             this.TXTkegiatan = new Guna.UI2.WinForms.Guna2TextBox();
             this.TXTwaksel = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TXTwakmul = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -58,7 +55,8 @@ namespace App_AgendaKegiatanGuru
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.CMBguru = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.CMBlokasi = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.CMBkategori = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2ShadowPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +64,8 @@ namespace App_AgendaKegiatanGuru
             // guna2ShadowPanel3
             // 
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel3.Controls.Add(this.CMBkategori);
+            this.guna2ShadowPanel3.Controls.Add(this.CMBlokasi);
             this.guna2ShadowPanel3.Controls.Add(this.CMBguru);
             this.guna2ShadowPanel3.Controls.Add(this.guna2Button4);
             this.guna2ShadowPanel3.Controls.Add(this.guna2Button3);
@@ -75,12 +75,8 @@ namespace App_AgendaKegiatanGuru
             this.guna2ShadowPanel3.Controls.Add(this.label5);
             this.guna2ShadowPanel3.Controls.Add(this.label4);
             this.guna2ShadowPanel3.Controls.Add(this.label3);
-            this.guna2ShadowPanel3.Controls.Add(this.label2);
-            this.guna2ShadowPanel3.Controls.Add(this.TXTlokasi);
-            this.guna2ShadowPanel3.Controls.Add(this.TXTkategori);
             this.guna2ShadowPanel3.Controls.Add(this.TXTkegiatan);
             this.guna2ShadowPanel3.Controls.Add(this.TXTwaksel);
-            this.guna2ShadowPanel3.Controls.Add(this.TXTwakmul);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel3.Location = new System.Drawing.Point(38, 67);
             this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
@@ -88,6 +84,23 @@ namespace App_AgendaKegiatanGuru
             this.guna2ShadowPanel3.Size = new System.Drawing.Size(1458, 346);
             this.guna2ShadowPanel3.TabIndex = 10;
             this.guna2ShadowPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel3_Paint);
+            // 
+            // CMBguru
+            // 
+            this.CMBguru.BackColor = System.Drawing.Color.Transparent;
+            this.CMBguru.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CMBguru.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMBguru.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CMBguru.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CMBguru.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.CMBguru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.CMBguru.ItemHeight = 30;
+            this.CMBguru.Location = new System.Drawing.Point(406, 102);
+            this.CMBguru.Name = "CMBguru";
+            this.CMBguru.Size = new System.Drawing.Size(226, 36);
+            this.CMBguru.TabIndex = 39;
+            this.CMBguru.DropDown += new System.EventHandler(this.guna2ComboBox1_DropDown);
+            this.CMBguru.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
             // 
             // guna2Button4
             // 
@@ -99,7 +112,7 @@ namespace App_AgendaKegiatanGuru
             this.guna2Button4.FillColor = System.Drawing.Color.Silver;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(1014, 281);
+            this.guna2Button4.Location = new System.Drawing.Point(779, 281);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(180, 45);
             this.guna2Button4.TabIndex = 38;
@@ -116,7 +129,7 @@ namespace App_AgendaKegiatanGuru
             this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(803, 281);
+            this.guna2Button3.Location = new System.Drawing.Point(570, 281);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(180, 45);
             this.guna2Button3.TabIndex = 37;
@@ -133,7 +146,7 @@ namespace App_AgendaKegiatanGuru
             this.BTNsimpan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.BTNsimpan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BTNsimpan.ForeColor = System.Drawing.Color.White;
-            this.BTNsimpan.Location = new System.Drawing.Point(598, 281);
+            this.BTNsimpan.Location = new System.Drawing.Point(357, 281);
             this.BTNsimpan.Name = "BTNsimpan";
             this.BTNsimpan.Size = new System.Drawing.Size(180, 45);
             this.BTNsimpan.TabIndex = 36;
@@ -143,7 +156,7 @@ namespace App_AgendaKegiatanGuru
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1075, 174);
+            this.label8.Location = new System.Drawing.Point(695, 62);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 20);
             this.label8.TabIndex = 13;
@@ -153,7 +166,7 @@ namespace App_AgendaKegiatanGuru
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(732, 44);
+            this.label6.Location = new System.Drawing.Point(402, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 20);
             this.label6.TabIndex = 12;
@@ -163,7 +176,7 @@ namespace App_AgendaKegiatanGuru
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(741, 174);
+            this.label5.Location = new System.Drawing.Point(695, 174);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 20);
             this.label5.TabIndex = 11;
@@ -183,64 +196,12 @@ namespace App_AgendaKegiatanGuru
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(416, 42);
+            this.label3.Location = new System.Drawing.Point(46, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "Waktu Selesai";
             this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Waktu Mulai";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // TXTlokasi
-            // 
-            this.TXTlokasi.BorderRadius = 10;
-            this.TXTlokasi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TXTlokasi.DefaultText = "";
-            this.TXTlokasi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TXTlokasi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TXTlokasi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TXTlokasi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TXTlokasi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TXTlokasi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TXTlokasi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TXTlokasi.Location = new System.Drawing.Point(1079, 199);
-            this.TXTlokasi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TXTlokasi.Name = "TXTlokasi";
-            this.TXTlokasi.PlaceholderText = "Lokasi...";
-            this.TXTlokasi.SelectedText = "";
-            this.TXTlokasi.Size = new System.Drawing.Size(260, 51);
-            this.TXTlokasi.TabIndex = 6;
-            this.TXTlokasi.TextChanged += new System.EventHandler(this.TXTlokasi_TextChanged);
-            // 
-            // TXTkategori
-            // 
-            this.TXTkategori.BorderRadius = 10;
-            this.TXTkategori.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TXTkategori.DefaultText = "";
-            this.TXTkategori.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TXTkategori.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TXTkategori.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TXTkategori.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TXTkategori.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TXTkategori.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TXTkategori.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TXTkategori.Location = new System.Drawing.Point(745, 199);
-            this.TXTkategori.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TXTkategori.Name = "TXTkategori";
-            this.TXTkategori.PlaceholderText = "Kategori...";
-            this.TXTkategori.SelectedText = "";
-            this.TXTkategori.Size = new System.Drawing.Size(260, 51);
-            this.TXTkategori.TabIndex = 5;
-            this.TXTkategori.TextChanged += new System.EventHandler(this.TXTkategori_TextChanged);
             // 
             // TXTkegiatan
             // 
@@ -275,7 +236,7 @@ namespace App_AgendaKegiatanGuru
             this.TXTwaksel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TXTwaksel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TXTwaksel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TXTwaksel.Location = new System.Drawing.Point(420, 67);
+            this.TXTwaksel.Location = new System.Drawing.Point(50, 87);
             this.TXTwaksel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TXTwaksel.Name = "TXTwaksel";
             this.TXTwaksel.PlaceholderText = "Waktu Selesai...";
@@ -283,27 +244,6 @@ namespace App_AgendaKegiatanGuru
             this.TXTwaksel.Size = new System.Drawing.Size(260, 51);
             this.TXTwaksel.TabIndex = 2;
             this.TXTwaksel.TextChanged += new System.EventHandler(this.TXTwaksel_TextChanged);
-            // 
-            // TXTwakmul
-            // 
-            this.TXTwakmul.BorderRadius = 10;
-            this.TXTwakmul.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TXTwakmul.DefaultText = "";
-            this.TXTwakmul.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TXTwakmul.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TXTwakmul.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TXTwakmul.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TXTwakmul.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TXTwakmul.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TXTwakmul.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TXTwakmul.Location = new System.Drawing.Point(47, 67);
-            this.TXTwakmul.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TXTwakmul.Name = "TXTwakmul";
-            this.TXTwakmul.PlaceholderText = "Waktu Mulai...";
-            this.TXTwakmul.SelectedText = "";
-            this.TXTwakmul.Size = new System.Drawing.Size(260, 51);
-            this.TXTwakmul.TabIndex = 1;
-            this.TXTwakmul.TextChanged += new System.EventHandler(this.TXTwakmul_TextChanged);
             // 
             // label7
             // 
@@ -441,22 +381,37 @@ namespace App_AgendaKegiatanGuru
             this.guna2TextBox1.TabIndex = 39;
             this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
-            // CMBguru
+            // CMBlokasi
             // 
-            this.CMBguru.BackColor = System.Drawing.Color.Transparent;
-            this.CMBguru.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CMBguru.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CMBguru.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CMBguru.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CMBguru.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.CMBguru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.CMBguru.ItemHeight = 30;
-            this.CMBguru.Location = new System.Drawing.Point(736, 79);
-            this.CMBguru.Name = "CMBguru";
-            this.CMBguru.Size = new System.Drawing.Size(226, 36);
-            this.CMBguru.TabIndex = 39;
-            this.CMBguru.DropDown += new System.EventHandler(this.guna2ComboBox1_DropDown);
-            this.CMBguru.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            this.CMBlokasi.BackColor = System.Drawing.Color.Transparent;
+            this.CMBlokasi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CMBlokasi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMBlokasi.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CMBlokasi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CMBlokasi.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.CMBlokasi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.CMBlokasi.ItemHeight = 30;
+            this.CMBlokasi.Location = new System.Drawing.Point(699, 102);
+            this.CMBlokasi.Name = "CMBlokasi";
+            this.CMBlokasi.Size = new System.Drawing.Size(226, 36);
+            this.CMBlokasi.TabIndex = 40;
+            this.CMBlokasi.DropDown += new System.EventHandler(this.CMBlokasi_DropDown);
+            // 
+            // CMBkategori
+            // 
+            this.CMBkategori.BackColor = System.Drawing.Color.Transparent;
+            this.CMBkategori.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CMBkategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMBkategori.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CMBkategori.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CMBkategori.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.CMBkategori.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.CMBkategori.ItemHeight = 30;
+            this.CMBkategori.Location = new System.Drawing.Point(699, 214);
+            this.CMBkategori.Name = "CMBkategori";
+            this.CMBkategori.Size = new System.Drawing.Size(226, 36);
+            this.CMBkategori.TabIndex = 41;
+            this.CMBkategori.DropDown += new System.EventHandler(this.CMBkategori_DropDown);
             // 
             // FAgendaKegiatan
             // 
@@ -487,18 +442,16 @@ namespace App_AgendaKegiatanGuru
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox TXTlokasi;
-        private Guna.UI2.WinForms.Guna2TextBox TXTkategori;
         private Guna.UI2.WinForms.Guna2TextBox TXTkegiatan;
         private Guna.UI2.WinForms.Guna2TextBox TXTwaksel;
-        private Guna.UI2.WinForms.Guna2TextBox TXTwakmul;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button BTNsimpan;
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox CMBguru;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -509,7 +462,7 @@ namespace App_AgendaKegiatanGuru
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewImageColumn Column9;
         private System.Windows.Forms.DataGridViewImageColumn Column10;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2ComboBox CMBguru;
+        private Guna.UI2.WinForms.Guna2ComboBox CMBlokasi;
+        private Guna.UI2.WinForms.Guna2ComboBox CMBkategori;
     }
 }

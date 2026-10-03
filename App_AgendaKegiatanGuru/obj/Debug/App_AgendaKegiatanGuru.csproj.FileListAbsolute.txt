@@ -51,7 +51,6 @@ F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\MySql.
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.csprojAssemblyReference.cache
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.DashboardAdmin.resources
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FAgendaKegiatan.resources
-F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FLaporan.resources
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FmenuPetugas.resources
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.Fguru.resources
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.Fkategori.resources

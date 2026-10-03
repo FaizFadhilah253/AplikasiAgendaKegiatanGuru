@@ -28,9 +28,9 @@ namespace App_AgendaKegiatanGuru
                 string wakmul = "" + baris["waktu_mulai"];
                 string waksel = "" + baris["waktu_selesai"];
                 string kgt = "" + baris["kegiatan"];
-                string gr = "" + baris["guru"];
-                string kate = "" + baris["kategori"];
-                string lok = "" + baris["lokasi"];
+                string gr = "" + baris["id_guru"];
+                string kate = "" + baris["id_kategori"];
+                string lok = "" + baris["id_lokasi"];
                 dataGridView1.Rows.Add(ida, tgl, wakmul, waksel, kgt, gr, kate, lok);
 
             }

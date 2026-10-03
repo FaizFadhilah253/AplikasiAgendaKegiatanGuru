@@ -106,8 +106,7 @@ namespace App_AgendaKegiatanGuru
 
         private void guna2Button10_Click(object sender, EventArgs e)
         {
-            FLaporan FP = new FLaporan() { TopLevel = false, TopMost = true };
-            KF.UntukForm(FP, PNLKONTEN);
+        
         }
     }
 }

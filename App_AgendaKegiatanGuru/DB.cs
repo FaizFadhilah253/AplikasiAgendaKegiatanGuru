@@ -13,7 +13,7 @@ namespace App_AgendaKegiatanGuru
     class DB
     {
         public static MySqlConnection koneksi = new MySqlConnection
-            ("server = 127.0.0.1; username = root; password = ; database = db_agenda");
+            ("server = 127.0.0.1; username = root; password = ; database = db_agenda ; Allow Zero Datetime = True");
         public static DataSet ds = new DataSet();
         public static MySqlDataAdapter da;
         public static MySqlCommand perintah;
