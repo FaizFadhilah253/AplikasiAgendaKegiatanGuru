@@ -17,6 +17,9 @@ namespace App_AgendaKegiatanGuru
             InitializeComponent();
         }
 
+        public string IDLogin;
+
+
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 

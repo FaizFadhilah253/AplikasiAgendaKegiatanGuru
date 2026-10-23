@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace App_AgendaKegiatanGuru
 {
@@ -319,6 +322,23 @@ namespace App_AgendaKegiatanGuru
             {
                 CMBkategori.Items.Add(item["nama_kategori"].ToString());
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ReportDocument rpt = new ReportDocument();
+            rpt.Load("LAPORANAGENDAKEGIATAN.rpt");
+
+            string pdfPath = Path.Combine(Path.GetTempPath(), "Laporan_Agenda_Kegiatan.pdf");
+            rpt.ExportToDisk(ExportFormatType.PortableDocFormat, pdfPath);
+
+            System.Diagnostics.Process.Start(pdfPath);
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            FormCobaLaporan CBL = new FormCobaLaporan();
+            CBL.ShowDialog();
         }
     }
 }

@@ -39,7 +39,7 @@ namespace App_AgendaKegiatanGuru
                         DataRow brs = DB.ds.Tables[0].Rows[0];
                         string id = "" + brs["ID"];
 
-                        FmenuPetugas F1 = new FmenuPetugas();
+                        FmenuAdmin F1 = new FmenuAdmin();
                         F1.IDLogin = id;
                         F1.Show();
                     }

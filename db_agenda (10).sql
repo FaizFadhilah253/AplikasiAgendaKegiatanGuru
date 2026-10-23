@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Okt 2026 pada 04.32
+-- Waktu pembuatan: 23 Okt 2026 pada 11.04
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.0.30
 
@@ -44,10 +44,11 @@ CREATE TABLE `agenda` (
 
 INSERT INTO `agenda` (`id_agenda`, `tanggal`, `waktu_mulai`, `waktu_selesai`, `kegiatan`, `id_guru`, `id_kategori`, `id_lokasi`) VALUES
 (4, '2026-10-02', '20:01:00', '10:00:00', 'mengajar', 9, 8, 7),
-(5, '2026-10-02', '20:16:40', '13:00:00', 'Rapat', 10, 7, 8),
-(6, '2026-10-02', '20:20:46', '14:00:00', 'Mengajar', 8, 9, 9),
+(5, '2026-10-02', '20:16:40', '13:00:00', 'konseling', 9, 9, 7),
+(6, '2026-10-02', '20:20:46', '14:00:00', 'Mengajar', 8, 7, 9),
 (8, '2026-10-02', '20:42:42', '14:00:00', 'rapat', 11, 8, 10),
-(20, '2026-10-03', '09:30:29', '13:00:00', 'konseling', 8, 9, 9);
+(20, '2026-10-03', '09:30:29', '13:00:00', 'konseling', 8, 9, 9),
+(21, '2026-10-16', '06:30:19', '13:00:00', 'Mengajar', 12, 7, 8);
 
 -- --------------------------------------------------------
 
@@ -71,7 +72,8 @@ INSERT INTO `guru` (`id_guru`, `nip`, `nama_guru`, `jenis_kelamin`, `no_telepon`
 (8, '12345', 'pa pias', 'Laki-laki', '089764'),
 (9, '91738', 'pa paris', 'Laki-laki', '9273254'),
 (10, '242344', 'pa rudi', 'Laki-laki', '098373'),
-(11, '213245', 'pa budi', 'Laki-laki', '0144423');
+(11, '213245', 'pa budi', 'Laki-laki', '0144423'),
+(12, '94282084208', 'pa asmuy', 'Laki-laki', '08978418');
 
 -- --------------------------------------------------------
 
@@ -157,8 +159,8 @@ INSERT INTO `user` (`ID`, `Nama_Lengkap`, `Username`, `Password`, `Role`) VALUES
 (1, 'pasirkuda', '1', '1', 'Admin'),
 (2, 'tanah', 'jerapah', '2', 'Petugas'),
 (3, 'is', 'pasi', '1', 'Admin'),
-(5, 'kakek', 'nenek', 'opah', 'Petugas'),
-(6, 'pasuy', '66', 'kancuy', '');
+(5, 'kakek', 'abah', 'opah', 'Petugas'),
+(6, 'pasuy', '66', 'kancuy', 'Petugas');
 
 --
 -- Indexes for dumped tables
@@ -211,13 +213,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
