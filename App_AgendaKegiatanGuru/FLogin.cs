@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace App_AgendaKegiatanGuru
 {
+
     public partial class FLogin : Form
     {
+        public string IDLogin;
         public FLogin()
         {
             InitializeComponent();
@@ -27,31 +29,28 @@ namespace App_AgendaKegiatanGuru
                 if (baris == 1)
                 {
                     DataRow row = DB.ds.Tables[0].Rows[0];
-                    string roleUser = row["role"].ToString();
 
-                    if (roleUser == "Admin")
+                    string id = row["ID"].ToString();
+                    string role = row["role"].ToString();
+
+                    if (role == "Admin")
                     {
                         FmenuAdmin Fa = new FmenuAdmin();
+                        Fa.IDLogin = id;
                         Fa.Show();
                     }
-                    else
+                    else if (role == "Pengguna")
                     {
-                        DataRow brs = DB.ds.Tables[0].Rows[0];
-                        string id = "" + brs["ID"];
-
-                        FmenuAdmin F1 = new FmenuAdmin();
-                        F1.IDLogin = id;
-                        F1.Show();
+                        FmenuPengguna Fa = new FmenuPengguna();
+                        Fa.IDLogin = id;
+                        Fa.Show();
                     }
+
                     this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("salah");
                 }
             }
 
-        }
+            }
 
         private void label1_Click(object sender, EventArgs e)
         {

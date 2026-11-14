@@ -92,6 +92,8 @@ namespace App_AgendaKegiatanGuru
         private void guna2Button9_Click(object sender, EventArgs e)
         {
             FAgendaKegiatan FP = new FAgendaKegiatan() { TopLevel = false, TopMost = true };
+            FP.IDLogin = this.IDLogin;
+            FP.roleUser = "Admin";
             KF.UntukForm(FP, PNLKONTEN);
         }
 

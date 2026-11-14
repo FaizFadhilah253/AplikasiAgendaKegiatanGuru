@@ -122,7 +122,6 @@ namespace App_AgendaKegiatanGuru
         {
             CMBrole.Items.Clear();
             CMBrole.Items.Add("Admin");
-            CMBrole.Items.Add("Petugas");
             CMBrole.Items.Add("Pengguna");
         }
 

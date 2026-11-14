@@ -158,7 +158,7 @@ namespace App_AgendaKegiatanGuru
             this.txtnama.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtnama.Name = "txtnama";
             this.txtnama.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtnama.PlaceholderText = "Email";
+            this.txtnama.PlaceholderText = "Username";
             this.txtnama.SelectedText = "";
             this.txtnama.Size = new System.Drawing.Size(325, 65);
             this.txtnama.TabIndex = 0;

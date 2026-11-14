@@ -349,6 +349,7 @@ namespace App_AgendaKegiatanGuru
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Name = "DashboardAdmin";
             this.Text = "DashboardAdmin";
+            this.Load += new System.EventHandler(this.DashboardAdmin_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             this.guna2ShadowPanel2.ResumeLayout(false);

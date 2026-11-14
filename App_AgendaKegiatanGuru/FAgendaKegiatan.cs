@@ -15,6 +15,9 @@ namespace App_AgendaKegiatanGuru
 {
     public partial class FAgendaKegiatan : Form
     {
+        public string IDLogin;
+        public string roleUser;
+
         public FAgendaKegiatan()
         {
             InitializeComponent();
@@ -33,27 +36,70 @@ namespace App_AgendaKegiatanGuru
             return Convert.ToDateTime(nilai).ToString("dd/MM/yyyy");
         }
 
-        private void isiGrid(string query)
+        private void isiGrid(string pencarian = "")
         {
-            dataGridView1.Rows.Clear();
-            DB.crud(query);
-            foreach (DataRow baris in DB.ds.Tables[0].Rows)
+            try
             {
-                string ida = "" + baris["id_agenda"];
-                string tgl = formatTanggal(baris["tanggal"]);
-                string wakmul = "" + baris["waktu_mulai"];
-                string waksel = "" + baris["waktu_selesai"];
-                string kgt = "" + baris["kegiatan"];
-                string gr = "" + baris["nama_guru"];
-                string kate = "" + baris["nama_kategori"];
-                string lok = "" + baris["nama_lokasi"];
-                dataGridView1.Rows.Add(ida, tgl, wakmul, waksel, kgt, gr, kate, lok);
+                string query = SQL_AGENDA;
+
+                if (roleUser == "Admin")
+                {
+                    if (!string.IsNullOrWhiteSpace(pencarian))
+                    {
+                        query += " WHERE g.nama_guru LIKE '%" +
+                                 esc(pencarian) + "%'";
+                    }
+                }
+                else if (roleUser == "Pengguna")
+                {
+                    query += " INNER JOIN user u ON " +
+                             "g.nama_guru = u.Nama_Lengkap " +
+                             "WHERE u.ID = '" + esc(IDLogin) + "'";
+
+                    if (!string.IsNullOrWhiteSpace(pencarian))
+                    {
+                        query += " AND g.nama_guru LIKE '%" +
+                                 esc(pencarian) + "%'";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Role pengguna tidak dikenali!");
+                    return;
+                }
+
+                query += " ORDER BY a.id_agenda";
+
+                dataGridView1.Rows.Clear();
+
+                DB.crud(query);
+
+                int no = 1;
+
+                foreach (DataRow baris in DB.ds.Tables[0].Rows)
+                {
+                    dataGridView1.Rows.Add(
+                        no++,
+                        baris["id_agenda"].ToString(),
+                        formatTanggal(baris["tanggal"]),
+                        baris["waktu_mulai"].ToString(),
+                        baris["waktu_selesai"].ToString(),
+                        baris["kegiatan"].ToString(),
+                        baris["nama_guru"].ToString(),
+                        baris["nama_kategori"].ToString(),
+                        baris["nama_lokasi"].ToString()
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal menampilkan data: " + ex.Message);
             }
         }
 
         public void tampildata()
         {
-            isiGrid(SQL_AGENDA + "ORDER BY a.id_agenda");
+            isiGrid("");
         }
 
         public void bersih()
@@ -68,48 +114,47 @@ namespace App_AgendaKegiatanGuru
 
         private void BTNsimpan_Click(object sender, EventArgs e)
         {
-                if (TXTwaksel.Text != "" && TXTkegiatan.Text != "" && CMBguru.Text != "" && CMBkategori.Text != "" && CMBlokasi.Text != "")
+            if (TXTwaksel.Text != "" && TXTkegiatan.Text != "" && CMBguru.Text != "" && CMBkategori.Text != "" && CMBlokasi.Text != "")
+            {
+                string waksel = esc(TXTwaksel.Text);
+                string kgt = esc(TXTkegiatan.Text);
+                string gr = esc(CMBguru.Text);
+                string kate = esc(CMBkategori.Text);
+                string lok = esc(CMBlokasi.Text);
+
+                DB.crud("SELECT id_guru FROM guru WHERE nama_guru = '" + gr + "'");
+                if (DB.ds.Tables[0].Rows.Count == 0)
                 {
-                    string waksel = esc(TXTwaksel.Text);
-                    string kgt = esc(TXTkegiatan.Text);
-                    string gr = esc(CMBguru.Text);
-                    string kate = esc(CMBkategori.Text);
-                    string lok = esc(CMBlokasi.Text);
-
-                    DB.crud("SELECT id_guru FROM guru WHERE nama_guru = '" + gr + "'");
-                    if (DB.ds.Tables[0].Rows.Count == 0)
-                    {
-                        MessageBox.Show("Guru tidak ditemukan, pilih dari daftar!");
-                        return;
-                    }
-
-                    DB.crud("SELECT id_kategori FROM kategori WHERE nama_kategori = '" + kate + "'");
-                    if (DB.ds.Tables[0].Rows.Count == 0)
-                    {
-                        MessageBox.Show("Kategori tidak ditemukan, pilih dari daftar!");
-                        return;
-                    }
-
-                    DB.crud("SELECT id_lokasi FROM lokasi WHERE nama_lokasi = '" + lok + "'");
-                    if (DB.ds.Tables[0].Rows.Count == 0)
-                    {
-                        MessageBox.Show("Lokasi tidak ditemukan, pilih dari daftar!");
-                        return;
-                    }
-
-                    DB.crud("INSERT INTO agenda (tanggal, waktu_mulai, waktu_selesai, kegiatan, id_guru, id_kategori, id_lokasi) VALUES (" +
-                            "CURDATE(), CURTIME(), '" + waksel + "', '" + kgt + "', " +
-                            "(SELECT id_guru FROM guru WHERE nama_guru = '" + gr + "' LIMIT 1), " +
-                            "(SELECT id_kategori FROM kategori WHERE nama_kategori = '" + kate + "' LIMIT 1), " +
-                            "(SELECT id_lokasi FROM lokasi WHERE nama_lokasi = '" + lok + "' LIMIT 1))");
-                    tampildata();
-                    bersih();
+                    MessageBox.Show("Guru tidak ditemukan, pilih dari daftar!");
+                    return;
                 }
-                else
+
+                DB.crud("SELECT id_kategori FROM kategori WHERE nama_kategori = '" + kate + "'");
+                if (DB.ds.Tables[0].Rows.Count == 0)
                 {
-                    MessageBox.Show("lengkapi data !");
+                    MessageBox.Show("Kategori tidak ditemukan, pilih dari daftar!");
+                    return;
                 }
-            
+
+                DB.crud("SELECT id_lokasi FROM lokasi WHERE nama_lokasi = '" + lok + "'");
+                if (DB.ds.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("Lokasi tidak ditemukan, pilih dari daftar!");
+                    return;
+                }
+
+                DB.crud("INSERT INTO agenda (tanggal, waktu_mulai, waktu_selesai, kegiatan, id_guru, id_kategori, id_lokasi) VALUES (" +
+                        "CURDATE(), CURTIME(), '" + waksel + "', '" + kgt + "', " +
+                        "(SELECT id_guru FROM guru WHERE nama_guru = '" + gr + "' LIMIT 1), " +
+                        "(SELECT id_kategori FROM kategori WHERE nama_kategori = '" + kate + "' LIMIT 1), " +
+                        "(SELECT id_lokasi FROM lokasi WHERE nama_lokasi = '" + lok + "' LIMIT 1))");
+                tampildata();
+                bersih();
+            }
+            else
+            {
+                MessageBox.Show("lengkapi data !");
+            }
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -140,7 +185,26 @@ namespace App_AgendaKegiatanGuru
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
+            DB.crud("SELECT Nama_Lengkap FROM user WHERE ID = '" + esc(IDLogin) + "'");
+            string nama = "(tidak ditemukan)";
+            if (DB.ds.Tables[0].Rows.Count > 0)
+            {
+                nama = DB.ds.Tables[0].Rows[0]["Nama_Lengkap"].ToString();
+            }
+
+            DB.crud("SELECT id_guru FROM guru WHERE nama_guru = '" + esc(nama) + "'");
+            int jumlahGuru = DB.ds.Tables[0].Rows.Count;
+
+            DB.crud("SELECT a.id_agenda FROM agenda a INNER JOIN guru g ON a.id_guru = g.id_guru WHERE g.nama_guru = '" + esc(nama) + "'");
+            int jumlahAgenda = DB.ds.Tables[0].Rows.Count;
+
+            MessageBox.Show("Nama_Lengkap user: [" + nama + "]" + Environment.NewLine +
+                            "Jumlah guru dengan nama itu: " + jumlahGuru + Environment.NewLine +
+                            "Jumlah agenda milik guru itu: " + jumlahAgenda);
+
+            guna2TextBox1.Clear();
             tampildata();
+            bersih();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -155,13 +219,14 @@ namespace App_AgendaKegiatanGuru
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
             int baris = e.RowIndex;
             int kolom = e.ColumnIndex;
             if (baris < 0 || dataGridView1.Rows[baris].Cells[0].Value == null) return;
 
-            if (kolom == 8)
+            if (kolom == 9)
             {
-                string idbar = dataGridView1.Rows[baris].Cells[0].Value.ToString();
+                string idbar = dataGridView1.Rows[baris].Cells[1].Value.ToString();
                 DB.crud(SQL_AGENDA + "WHERE a.id_agenda = '" + idbar + "'");
                 foreach (DataRow brs in DB.ds.Tables[0].Rows)
                 {
@@ -174,9 +239,9 @@ namespace App_AgendaKegiatanGuru
                 }
             }
 
-            if (kolom == 9)
+            if (kolom == 10)
             {
-                string idbar = dataGridView1.Rows[baris].Cells[0].Value.ToString();
+                string idbar = dataGridView1.Rows[baris].Cells[1].Value.ToString();
                 DialogResult setuju = MessageBox.Show("Apakah Mau Hapus? " + idbar, "Pemberitahuan",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (setuju == DialogResult.Yes)
@@ -280,7 +345,7 @@ namespace App_AgendaKegiatanGuru
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
-            isiGrid(SQL_AGENDA + "WHERE g.nama_guru LIKE '%" + esc(guna2TextBox1.Text) + "%' ORDER BY a.id_agenda");
+            isiGrid(guna2TextBox1.Text);
         }
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -305,13 +370,12 @@ namespace App_AgendaKegiatanGuru
 
         private void CMBlokasi_DropDown(object sender, EventArgs e)
         {
-            
-                DB.crud("SELECT * FROM lokasi");
-                CMBlokasi.Items.Clear();
-                foreach (DataRow item in DB.ds.Tables[0].Rows)
-                {
-                    CMBlokasi.Items.Add(item["nama_lokasi"].ToString());
-                }
+            DB.crud("SELECT * FROM lokasi");
+            CMBlokasi.Items.Clear();
+            foreach (DataRow item in DB.ds.Tables[0].Rows)
+            {
+                CMBlokasi.Items.Add(item["nama_lokasi"].ToString());
+            }
         }
 
         private void CMBkategori_DropDown(object sender, EventArgs e)
@@ -339,6 +403,27 @@ namespace App_AgendaKegiatanGuru
         {
             FormCobaLaporan CBL = new FormCobaLaporan();
             CBL.ShowDialog();
+        }
+
+        private void FAgendaKegiatan_Load(object sender, EventArgs e)
+        {
+            if (roleUser == "Pengguna")
+            {
+                CMBguru.Visible = false;
+                guna2ShadowPanel3.Visible = false;
+            }
+            else if (roleUser == "Admin")
+            {
+                CMBguru.Visible = true;
+            }
+
+            guna2Button4.Enabled = true;
+            guna2Button4.Visible = true;
+            guna2Button4.BringToFront();
+            guna2Button4.Click -= guna2Button4_Click;
+            guna2Button4.Click += guna2Button4_Click;
+
+            tampildata();
         }
     }
 }

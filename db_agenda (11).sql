@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Okt 2026 pada 11.04
+-- Waktu pembuatan: 14 Nov 2026 pada 08.21
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.0.30
 
@@ -48,7 +48,11 @@ INSERT INTO `agenda` (`id_agenda`, `tanggal`, `waktu_mulai`, `waktu_selesai`, `k
 (6, '2026-10-02', '20:20:46', '14:00:00', 'Mengajar', 8, 7, 9),
 (8, '2026-10-02', '20:42:42', '14:00:00', 'rapat', 11, 8, 10),
 (20, '2026-10-03', '09:30:29', '13:00:00', 'konseling', 8, 9, 9),
-(21, '2026-10-16', '06:30:19', '13:00:00', 'Mengajar', 12, 7, 8);
+(21, '2026-10-16', '06:30:19', '13:00:00', 'Mengajar', 12, 7, 8),
+(22, '2026-11-06', '06:20:45', '13:00:00', 'Rapat', 9, 8, 10),
+(25, '2026-11-06', '13:30:31', '12:00:00', 'Rapat', 9, 8, 8),
+(29, '2026-11-13', '08:45:51', '10:00:00', 'Rapat', 9, 8, 7),
+(30, '2026-11-13', '12:22:44', '12:00:00', 'Rapat', 14, 8, 10);
 
 -- --------------------------------------------------------
 
@@ -69,11 +73,11 @@ CREATE TABLE `guru` (
 --
 
 INSERT INTO `guru` (`id_guru`, `nip`, `nama_guru`, `jenis_kelamin`, `no_telepon`) VALUES
-(8, '12345', 'pa pias', 'Laki-laki', '089764'),
-(9, '91738', 'pa paris', 'Laki-laki', '9273254'),
-(10, '242344', 'pa rudi', 'Laki-laki', '098373'),
-(11, '213245', 'pa budi', 'Laki-laki', '0144423'),
-(12, '94282084208', 'pa asmuy', 'Laki-laki', '08978418');
+(8, '12345', 'pias karir', 'Laki-laki', '089764'),
+(9, '91738', 'rudi ruda', 'Laki-laki', '9273254'),
+(11, '213245', 'budi rabudi', 'Laki-laki', '0144423'),
+(12, '942820', 'asmuy maya', 'Laki-laki', '08978418'),
+(14, '0884918', 'pikas pukis', 'Laki-laki', '0987824742');
 
 -- --------------------------------------------------------
 
@@ -112,10 +116,10 @@ CREATE TABLE `lokasi` (
 --
 
 INSERT INTO `lokasi` (`id_lokasi`, `nama_lokasi`, `keterangan`) VALUES
-(7, 'Ruang 1', 'Mengajar'),
-(8, 'Ruang 2', 'Mengajar'),
-(9, 'Ruang 3', 'Mengajar'),
-(10, 'Aula', 'Konseling');
+(7, 'Ruang 1', 'Mengajar/Rapat/Konseling'),
+(8, 'Ruang 2', 'Mengajar/Rapat/Konseling'),
+(9, 'Ruang 3', 'Mengajar/Rapat/Konseling'),
+(10, 'Aula', 'Mengajar/Rapat/Konseling');
 
 -- --------------------------------------------------------
 
@@ -133,7 +137,6 @@ CREATE TABLE `role` (
 --
 
 INSERT INTO `role` (`ID`, `Nama_role`) VALUES
-(2, 'Petugas'),
 (3, 'Admin'),
 (4, 'Pengguna');
 
@@ -148,7 +151,7 @@ CREATE TABLE `user` (
   `Nama_Lengkap` varchar(50) NOT NULL,
   `Username` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
-  `Role` enum('Admin','Petugas','','') NOT NULL
+  `Role` enum('Admin','Pengguna','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -157,10 +160,12 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `Nama_Lengkap`, `Username`, `Password`, `Role`) VALUES
 (1, 'pasirkuda', '1', '1', 'Admin'),
-(2, 'tanah', 'jerapah', '2', 'Petugas'),
 (3, 'is', 'pasi', '1', 'Admin'),
-(5, 'kakek', 'abah', 'opah', 'Petugas'),
-(6, 'pasuy', '66', 'kancuy', 'Petugas');
+(7, 'pias karir', 'pias', 'pias123', 'Pengguna'),
+(9, 'rudi ruda', 'rudi', 'rudi123', 'Pengguna'),
+(10, 'budi rabudi', 'budi', 'budi123', 'Pengguna'),
+(11, 'asmuy maya', 'asmuy', 'asmuy123', 'Pengguna'),
+(12, 'pikas pukis', 'pakis', 'pakis123', 'Pengguna');
 
 --
 -- Indexes for dumped tables
@@ -213,13 +218,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT untuk tabel `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
@@ -243,7 +248,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

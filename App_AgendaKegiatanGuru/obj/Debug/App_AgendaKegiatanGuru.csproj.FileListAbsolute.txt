@@ -48,7 +48,6 @@ F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\Guna.U
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\MySql.Data.dll
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\Google.Protobuf.dll
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\MySql.Data.xml
-F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.csprojAssemblyReference.cache
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.DashboardAdmin.resources
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FAgendaKegiatan.resources
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.Fguru.resources
@@ -87,3 +86,6 @@ F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\Crysta
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\stdole.dll
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.FormCobaLaporan.resources
 F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\CrystalDecisions.Windows.Forms.dll
+F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\obj\Debug\App_AgendaKegiatanGuru.csprojAssemblyReference.cache
+F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\Report\laporanAgendaKegiatan.rpt
+F:\PROJEK DEKSTOP\App_AgendaKegiatanGuru\App_AgendaKegiatanGuru\bin\Debug\Report\laporanAgendaKegiatan.cs

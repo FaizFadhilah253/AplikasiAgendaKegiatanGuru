@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace App_AgendaKegiatanGuru {
+namespace App_AgendaKegiatanGuru.Report {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace App_AgendaKegiatanGuru {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class LAPORANAGENDAKEGIATAN : ReportClass {
+    public class laporanAgendaKegiatan : ReportClass {
         
-        public LAPORANAGENDAKEGIATAN() {
+        public laporanAgendaKegiatan() {
         }
         
         public override string ResourceName {
             get {
-                return "LAPORANAGENDAKEGIATAN.rpt";
+                return "laporanAgendaKegiatan.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace App_AgendaKegiatanGuru {
         
         public override string FullResourceName {
             get {
-                return "App_AgendaKegiatanGuru.LAPORANAGENDAKEGIATAN.rpt";
+                return "App_AgendaKegiatanGuru.Report.laporanAgendaKegiatan.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace App_AgendaKegiatanGuru {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedLAPORANAGENDAKEGIATAN : Component, ICachedReport {
+    public class CachedlaporanAgendaKegiatan : Component, ICachedReport {
         
-        public CachedLAPORANAGENDAKEGIATAN() {
+        public CachedlaporanAgendaKegiatan() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace App_AgendaKegiatanGuru {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            LAPORANAGENDAKEGIATAN rpt = new LAPORANAGENDAKEGIATAN();
+            laporanAgendaKegiatan rpt = new laporanAgendaKegiatan();
             rpt.Site = this.Site;
             return rpt;
         }

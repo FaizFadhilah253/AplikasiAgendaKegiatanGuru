@@ -125,5 +125,22 @@ namespace App_AgendaKegiatanGuru
         {
 
         }
+
+        private void DashboardAdmin_Load(object sender, EventArgs e)
+        {
+            DB.crud("SELECT COUNT(*) as total FROM agenda");
+            foreach (DataRow item in DB.ds.Tables[0].Rows)
+            {
+                string total = item["total"].ToString();
+                label4.Text = total;
+            }
+
+            DB.crud("SELECT COUNT(*) as tothadir FROM agenda WHERE tanggal = CURDATE()");
+            foreach (DataRow item in DB.ds.Tables[0].Rows)
+            {
+                string tothadir = item["tothadir"].ToString();
+                label5.Text = tothadir;
+            }
+        }
     }
 }
