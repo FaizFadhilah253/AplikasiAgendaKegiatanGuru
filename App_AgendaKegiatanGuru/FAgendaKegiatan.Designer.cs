@@ -34,7 +34,6 @@ namespace App_AgendaKegiatanGuru
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.CMBkategori = new Guna.UI2.WinForms.Guna2ComboBox();
             this.CMBlokasi = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.CMBguru = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.BTNsimpan = new Guna.UI2.WinForms.Guna2Button();
@@ -60,6 +59,7 @@ namespace App_AgendaKegiatanGuru
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CMBguru = new System.Windows.Forms.ComboBox();
             this.guna2ShadowPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -67,11 +67,11 @@ namespace App_AgendaKegiatanGuru
             // guna2ShadowPanel3
             // 
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel3.Controls.Add(this.CMBguru);
             this.guna2ShadowPanel3.Controls.Add(this.guna2Button2);
             this.guna2ShadowPanel3.Controls.Add(this.guna2Button1);
             this.guna2ShadowPanel3.Controls.Add(this.CMBkategori);
             this.guna2ShadowPanel3.Controls.Add(this.CMBlokasi);
-            this.guna2ShadowPanel3.Controls.Add(this.CMBguru);
             this.guna2ShadowPanel3.Controls.Add(this.guna2Button4);
             this.guna2ShadowPanel3.Controls.Add(this.guna2Button3);
             this.guna2ShadowPanel3.Controls.Add(this.BTNsimpan);
@@ -155,23 +155,6 @@ namespace App_AgendaKegiatanGuru
             this.CMBlokasi.Size = new System.Drawing.Size(226, 36);
             this.CMBlokasi.TabIndex = 40;
             this.CMBlokasi.DropDown += new System.EventHandler(this.CMBlokasi_DropDown);
-            // 
-            // CMBguru
-            // 
-            this.CMBguru.BackColor = System.Drawing.Color.Transparent;
-            this.CMBguru.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CMBguru.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CMBguru.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CMBguru.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CMBguru.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.CMBguru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.CMBguru.ItemHeight = 30;
-            this.CMBguru.Location = new System.Drawing.Point(406, 102);
-            this.CMBguru.Name = "CMBguru";
-            this.CMBguru.Size = new System.Drawing.Size(226, 36);
-            this.CMBguru.TabIndex = 39;
-            this.CMBguru.DropDown += new System.EventHandler(this.guna2ComboBox1_DropDown);
-            this.CMBguru.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
             // 
             // guna2Button4
             // 
@@ -460,6 +443,17 @@ namespace App_AgendaKegiatanGuru
             this.guna2TextBox1.TabIndex = 39;
             this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
+            // CMBguru
+            // 
+            this.CMBguru.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.CMBguru.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CMBguru.FormattingEnabled = true;
+            this.CMBguru.Location = new System.Drawing.Point(394, 91);
+            this.CMBguru.Name = "CMBguru";
+            this.CMBguru.Size = new System.Drawing.Size(238, 28);
+            this.CMBguru.TabIndex = 44;
+            this.CMBguru.DropDown += new System.EventHandler(this.comboBox1_DropDown);
+            // 
             // FAgendaKegiatan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -499,7 +493,6 @@ namespace App_AgendaKegiatanGuru
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2ComboBox CMBguru;
         private Guna.UI2.WinForms.Guna2ComboBox CMBlokasi;
         private Guna.UI2.WinForms.Guna2ComboBox CMBkategori;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
@@ -515,5 +508,6 @@ namespace App_AgendaKegiatanGuru
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewImageColumn Column9;
         private System.Windows.Forms.DataGridViewImageColumn Column10;
+        private System.Windows.Forms.ComboBox CMBguru;
     }
 }

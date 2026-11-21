@@ -52,14 +52,13 @@ namespace App_AgendaKegiatanGuru
                 }
                 else if (roleUser == "Pengguna")
                 {
-                    query += " INNER JOIN user u ON " +
-                             "g.nama_guru = u.Nama_Lengkap " +
-                             "WHERE u.ID = '" + esc(IDLogin) + "'";
+                    query += " INNER JOIN user u ON g.nama_guru = u.Nama_Lengkap " +
+                     " WHERE u.ID = '" + esc(IDLogin) + "'";
 
                     if (!string.IsNullOrWhiteSpace(pencarian))
                     {
-                        query += " AND g.nama_guru LIKE '%" +
-                                 esc(pencarian) + "%'";
+                        query += " AND DATE_FORMAT(a.tanggal, '%Y-%m-%d') LIKE '%" +
+                          esc(pencarian) + "%'";
                     }
                 }
                 else
@@ -424,6 +423,16 @@ namespace App_AgendaKegiatanGuru
             guna2Button4.Click += guna2Button4_Click;
 
             tampildata();
+        }
+
+        private void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            DB.crud("SELECT * FROM guru");
+            CMBguru.Items.Clear();
+            foreach (DataRow item in DB.ds.Tables[0].Rows)
+            {
+                CMBguru.Items.Add(item["nama_guru"].ToString());
+            }
         }
     }
 }

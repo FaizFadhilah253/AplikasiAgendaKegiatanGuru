@@ -32,6 +32,7 @@ namespace App_AgendaKegiatanGuru
 
                     string id = row["ID"].ToString();
                     string role = row["role"].ToString();
+                    MessageBox.Show("Selamat Datang", "Login Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     if (role == "Admin")
                     {

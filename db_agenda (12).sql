@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Nov 2026 pada 08.21
+-- Waktu pembuatan: 21 Nov 2026 pada 12.05
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.0.30
 
@@ -52,7 +52,9 @@ INSERT INTO `agenda` (`id_agenda`, `tanggal`, `waktu_mulai`, `waktu_selesai`, `k
 (22, '2026-11-06', '06:20:45', '13:00:00', 'Rapat', 9, 8, 10),
 (25, '2026-11-06', '13:30:31', '12:00:00', 'Rapat', 9, 8, 8),
 (29, '2026-11-13', '08:45:51', '10:00:00', 'Rapat', 9, 8, 7),
-(30, '2026-11-13', '12:22:44', '12:00:00', 'Rapat', 14, 8, 10);
+(30, '2026-11-13', '12:22:44', '12:00:00', 'Rapat', 14, 8, 10),
+(31, '2026-11-20', '12:19:56', '19:00:00', 'Rapat', 14, 8, 10),
+(32, '2026-11-20', '13:50:44', '14:00:00', 'Mengajar', 9, 7, 8);
 
 -- --------------------------------------------------------
 
@@ -165,7 +167,7 @@ INSERT INTO `user` (`ID`, `Nama_Lengkap`, `Username`, `Password`, `Role`) VALUES
 (9, 'rudi ruda', 'rudi', 'rudi123', 'Pengguna'),
 (10, 'budi rabudi', 'budi', 'budi123', 'Pengguna'),
 (11, 'asmuy maya', 'asmuy', 'asmuy123', 'Pengguna'),
-(12, 'pikas pukis', 'pakis', 'pakis123', 'Pengguna');
+(12, 'pikas pukis', 'pikas', 'pikas123', 'Pengguna');
 
 --
 -- Indexes for dumped tables
@@ -218,7 +220,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT untuk tabel `guru`
